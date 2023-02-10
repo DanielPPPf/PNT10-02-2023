@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+		<title>Mi pagina web con fondo WOW!!</title>
+</head>
+<body>
+	<h1>1. Botones con alertas y confrmaciones</h1>
+	<br>
+	<button>Boton que no sirve</button>
+	<br> <br>
+	<button onclick="accion_1()" id="Bt1"> Botón 1</button>
+	<br> <br>
+
+	<button onclick="accion_2()" id="Bt2"> Botón 2 </button>
+	<br><br>
+
+	<button onclick="accion_3()" id="Bt3"> Botón 3 </button>
+	<br><br><br>
+
+	<h2>2. Despliegue de datos (interfaz de entrada y salda): </h2>
+
+	<p> Hola!, a continuación haremos unas preguntas personales. ¡Gracias!</p> <br>
+
+	Primer Nombre: <input type="text" name="Recibir texto 1" id="txt_1">
+	Segundo nombre: <input type="text" name="Recibir texto 2" id="txt_2">
+
+
+
+	<p>Primer apellido <input type="text" name="Recibir texto 3" id="txt_3"></p>
+	<p>Segundo apellido: <input type="text" name="Recibir texto 4" id="txt_4"></p>
+
+	<button onclick="accion_4()" id="Bt4">Concatenar nombre completo</button> <br> <br>
+	
+	Nombres: &nbsp;<output id="Out1"></output>Apellidos: &nbsp;<output id="Out2"></output> 
+
+	<style type="text/css">
+		/* Esto es un comentario CSS*/
+
+		body {
+			background-image: url(fondo.png);
+			background-repeat: round;
+			color: rgba(25, 167, 120, 1.0);
+		}
+
+		h1{ color: rgba(131, 35, 57, 1.0); }
+		h2 { color:rgba(23, 207, 176, 1.0); }
+
+		#Out1 {color: rgba(255, 0, 255, 1.0);}
+		#Out2{	color: rgba(0, 255, 255, 1.0);}
+		#Bt4{color: rgba(255, 0, 0, 1.0);}
+
+
+	</style>
+	<script type="text/javascript">
+		
+		function accion_1 () {
+			alert("Alerta de botón #1")
+
+		}
+
+		function accion_2(){
+			confirm("Confirmación de botón #2")
+		}
+		function accion_3(){
+			alert("Alerta de boton #3"); 
+			confirm("Confirmación botón #3")
+		}
+		function accion_4(){
+
+			var NombreCompleto= document.getElementById("txt_1").value+" "+
+								document.getElementById("txt_2").value+" "+
+								document.getElementById("txt_3").value+" "+
+								document.getElementById("txt_4").value
+
+			alert(NombreCompleto)
+			
+
+			var Nombres= document.getElementById("txt_1").value+" "+ document.getElementById("txt_2").value
+
+								document.getElementById("Out1").innerHTML=Nombres
+
+			var Apellidos= document.getElementById("txt_3").value+" "+ document.getElementById("txt_4").value	
+
+								document.getElementById("Out2").innerHTML=Apellidos				
+		}
+	</script>
+
+
+</body>			
+</html>
